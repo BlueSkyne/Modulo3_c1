@@ -14,8 +14,9 @@ class Clientes:
         else:
             self.saldo = self.saldo - monto
 
-    def abonar (self):
-        print("metodo abonar")
+    def abonar (self,monto):
+        self.saldo = self.saldo + monto
+        #print("metodo abonar")
 
     def mostrar_saldo (self):
         print("Su saldo es: ", str(self.saldo))
