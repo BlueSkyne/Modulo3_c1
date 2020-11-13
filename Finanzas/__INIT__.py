@@ -1,2 +1,2 @@
-from .c_clientes import class Clientes
-from .c_financiera import class Financiera
+from Finanzas.c_clientes import Clientes
+from .c_financiera import Financiera
