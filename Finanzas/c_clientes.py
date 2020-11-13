@@ -19,4 +19,4 @@ class Clientes:
         #print("metodo abonar")
 
     def mostrar_saldo (self):
-        print("Su saldo es: ", str(self.saldo))
+        return self.saldo

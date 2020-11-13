@@ -1,71 +1,55 @@
 import Finanzas as f
 import uuid
-
-"""
-while:
-    print("Menú: ")
-    if salir:
-        break
-    elif entidad:
-        #crear entidades
-    elif cliente:
-        #crear cliente
-    elif transferencia_cliente:
-        #trans cliente
-    elif trans_cliente_financiera:
     
-    elif imprimir_estado_c_cliente
-
-    elif imp_est_c_financiera:
-#imprimir tabla
-
-"""
-
-
-    
-
-    
-
 #ID Revisar
 u = uuid.uuid4
 print("este es el uuid", u)
 
 #punto 1 de tarea 2 entidades con nombre y saldo inicial de 100000000
+print("ENTIDADES CREADAS:")
 entidad1 = f.Financiera("Banco Estado", u ,"100000000",[])
 entidad2 = f.Financiera("Banco BCI", u ,"100000000",[])
 
-cliente1 = f.Clientes("Juan0" , uuid.uuid4 , 5055)
-cliente2 = f.Clientes("juan1" , uuid.uuid4, 0)
-cliente3 = f.Clientes("Juan2" , uuid.uuid4, 0)
-cliente4 = f.Clientes("Juan3" , uuid.uuid4, 0)
-cliente5 = f.Clientes("Juan4" , uuid.uuid4, 0)
-cliente6 = f.Clientes("Juan5" , uuid.uuid4, 0)
-cliente7 = f.Clientes("Juan6" , uuid.uuid4, 0)
-cliente8 = f.Clientes("Juan7" , uuid.uuid4, 0)
+print("CLIENTES CREADOS:")
+cliente1 = f.Clientes("Juan1" , uuid.uuid4, 5000)
+cliente2 = f.Clientes("juan2" , uuid.uuid4, 1000)
+cliente3 = f.Clientes("Juan3" , uuid.uuid4, 0)
+cliente4 = f.Clientes("Juan4" , uuid.uuid4, 0)
+cliente5 = f.Clientes("Juan5" , uuid.uuid4, 0)
+cliente6 = f.Clientes("Juan6" , uuid.uuid4, 0)
+cliente7 = f.Clientes("Juan7" , uuid.uuid4, 0)
+cliente8 = f.Clientes("Juan8" , uuid.uuid4, 0)
 
+#ASIGNACION DE CLIENTES A ENTIDAD1
 entidad1.agregar_cliente(cliente1.nombre)
 entidad1.agregar_cliente(cliente2.nombre)
 entidad1.agregar_cliente(cliente3.nombre)
 entidad1.agregar_cliente(cliente4.nombre)
 
-entidad2.agregar_cliente(cliente8.nombre)
+#ASIGNACION DE CLIENTES A ENTIDAD2
 entidad2.agregar_cliente(cliente5.nombre)
 entidad2.agregar_cliente(cliente6.nombre)
 entidad2.agregar_cliente(cliente7.nombre)
+entidad2.agregar_cliente(cliente8.nombre)
+
 #Este corresponde al punto dos , en esta parte se asignan los clientes a las entidades (falta resolver los id)
+print("CLIENTES ASIGNADOS A CADA ENTIDAD:")
 print(entidad1.nombre + " clientes entidad : "+ str(entidad1.listar_cliente))
 print(entidad2.nombre + " clientes entidad : "+ str(entidad2.listar_cliente))
 
 #pto 3 tarea trans_entre_cliente
-trans_entre_cliente(cliente1,cliente2,50000)
-trans_entre_cliente(cliente1,cliente2,50000)
-trans_entre_cliente(cliente1,cliente2,50000)
-trans_entre_cliente(cliente1,cliente2,50000)
-trans_entre_cliente(cliente1,cliente2,50000)#en total deben haber 3 transacciones por cada cliente 
+print("TRANSACCIONES ENTRE CLIENTE:")
+f.trans_entre_cliente(cliente1,cliente2,50000)
+f.trans_entre_cliente(cliente1,cliente2,500000)
+f.trans_entre_cliente(cliente1,cliente2,500000)
+f.trans_entre_cliente(cliente1,cliente2,-500000)
+
+'''
+f.trans_entre_cliente(cliente1,cliente2,50000)#en total deben haber 3 transacciones por cada cliente 
 
 #pto 4 giro entre 2 clientes en los cuales la transaccion falle por falta de saldo
-trans_entre_cliente(cliente1,cliente2,999999999)
-trans_entre_cliente(cliente1,cliente2,999999999)
+f.trans_entre_cliente(cliente1,cliente2,999999999)
+f.trans_entre_cliente(cliente1,cliente2,999999999)
 
 
 #pto 5 realizar 4 transferencias entre clientes 
@@ -120,3 +104,4 @@ print(cliente1.saldo + cliente2.saldo)
 # Los id de clientes y financieras deberán ser creados con el módulo uuid y utilizando uuid4().
 # Las clases mencionadas deberán estar implementadas en un módulo llamado finanzas.
 #Deberá crear un script principal que importe el módulo finanzas.
+'''

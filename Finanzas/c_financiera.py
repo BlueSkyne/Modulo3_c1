@@ -2,10 +2,10 @@
 class Financiera:
 # ATRIBUTOS    
     def __init__(self, nombre, identificador, saldo_institucional, clientes): 
-        self.nombre=nombre
-        self.identificador=identificador
-        self.saldo_institucional=saldo_institucional
-        self.clientes=clientes
+        self.nombre = nombre
+        self.identificador = identificador
+        self.saldo_institucional = saldo_institucional
+        self.clientes = clientes
 #   METODOS:
     def init (self): 
         print("metodo init")
@@ -15,7 +15,7 @@ class Financiera:
       #print("agregar_cliente") 
     
     def listar_cliente (self):
-        print(self.cliente)
+        print(self.clientes)
 
     def eliminar_cliente (self): 
         print("eliminar_cliente") 
