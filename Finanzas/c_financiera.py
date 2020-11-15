@@ -12,7 +12,7 @@ class Financiera:
         #print("agregar_cliente") 
     
     def listar_cliente (self):
-        print(self.clientes)
+        print(self.nombre)
 
     def eliminar_cliente (self): 
         print("eliminar_cliente") 
@@ -23,7 +23,7 @@ class Financiera:
         else:
             desde.girar(monto)
             hacia.abonar(monto)
-            print("Transferencia exitosa de CLP "+str(mon)+ " | " + desde.nombre+ " a "+ hacia.nombre)
+            print("Transferencia exitosa de CLP " + str(monto) + " | " + desde.nombre+ " a " + hacia.nombre)
 
     def giros_totales (self): 
         print("giros_totales") 
