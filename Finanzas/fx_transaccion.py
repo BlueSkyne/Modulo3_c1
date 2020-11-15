@@ -1,7 +1,9 @@
 def trans_entre_cliente(envia,recibe,monto):#cris
     #hacer fx que transfiera entre cliente y que valide que el cliente que envia tiene saldo
-    if envia.saldo-monto < -1000000:
-        print(envia.nombre + " FUNCION No tiene saldo suficiente!!!")
+#    if envia.saldo-monto < -1000000:
+    if not envia.girar(monto):
+#        print(envia.nombre + "No tiene saldo suficiente!!!")
+        return
     else:
         envia.girar(monto)  
         recibe.abonar(monto)
