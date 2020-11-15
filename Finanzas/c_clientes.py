@@ -9,9 +9,10 @@ class Clientes:
         self.saldo=saldo 
 
     def girar (self,monto):
-        if self.saldo - monto < -1000000:
-            print("No tiene suficiente saldo.")
-        else:
+#        if self.saldo - monto < -1000000:
+#            print("No tiene suficiente saldo.")
+#            return False
+#        else:
             self.saldo = self.saldo - monto
 
     def abonar (self,monto):
