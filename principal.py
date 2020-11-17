@@ -1,10 +1,13 @@
 import Finanzas as f
 import uuid
+import random
 
 #punto 1 de tarea 2 entidades con nombre y saldo inicial de 100000000
 print("ENTIDADES CREADAS:")
-entidad1 = f.Financiera("Banco Estado", uuid.uuid4() ,"100000000",[])
-entidad2 = f.Financiera("Banco BCI", uuid.uuid4() ,"100000000",[])
+entidad1 = f.Financiera("Banco Estado", uuid.uuid4() ,100000000,[])
+print(entidad1)
+entidad2 = f.Financiera("Banco BCI", uuid.uuid4() ,100000000,[])
+print(entidad2)
 
 print("CLIENTES CREADOS:")
 cliente1 = f.Clientes("Juan1" , uuid.uuid4(), 1000)
@@ -17,51 +20,56 @@ cliente7 = f.Clientes("Juan7" , uuid.uuid4(), 7000)
 cliente8 = f.Clientes("Juan8" , uuid.uuid4(), 8000)
 
 #ASIGNACION DE CLIENTES A ENTIDAD1
-entidad1.agregar_cliente(cliente1.nombre)
-entidad1.agregar_cliente(cliente2.nombre)
-entidad1.agregar_cliente(cliente3.nombre)
-entidad1.agregar_cliente(cliente4.nombre)
-
-entidad1.listar_cliente()
+entidad1.agregar_cliente(cliente1)
+entidad1.agregar_cliente(cliente2)
+entidad1.agregar_cliente(cliente3)
+entidad1.agregar_cliente(cliente4)
 
 #ASIGNACION DE CLIENTES A ENTIDAD2
-entidad2.agregar_cliente(cliente5.nombre)
-entidad2.agregar_cliente(cliente6.nombre)
-entidad2.agregar_cliente(cliente7.nombre)
-entidad2.agregar_cliente(cliente8.nombre)
-
-entidad2.listar_cliente()
-
-#Este corresponde al punto dos , en esta parte se asignan los clientes a las entidades (falta resolver los id)
-print("CLIENTES ASIGNADOS A CADA ENTIDAD:")
-print(entidad1.nombre + " clientes entidad : "+ str(entidad1.listar_cliente))
-print(entidad2.nombre + " clientes entidad : "+ str(entidad2.listar_cliente))
+entidad2.agregar_cliente(cliente5)
+entidad2.agregar_cliente(cliente6)
+entidad2.agregar_cliente(cliente7)
+entidad2.agregar_cliente(cliente8)
 
 #pto 3 tarea trans_entre_cliente
-print("TRANSACCIONES ENTRE CLIENTE:")
-entidad1.transferir(cliente5, cliente2, 1000000)
-print(str(cliente5.saldo))
-entidad2.transferir(cliente5, cliente2, 1000000)
-#f.trans_entre_cliente(cliente1,cliente2,1000)
-#f.trans_entre_cliente(cliente3,cliente4,2000)
-#f.trans_entre_cliente(cliente5,cliente6,3000)
-#f.trans_entre_cliente(cliente7,cliente8,4000)
+print("TRANSACCIONES ENTRE CLIENTE (24):")
+
+
+f.transf_aleat(12, entidad1)
+
+
+f.transf_aleat(12, entidad2)
+
+
 
 #en total deben haber 3 transacciones por cada cliente 
 
 #pto 4 giro entre 2 clientes en los cuales la transaccion falle por falta de saldo
-#f.trans_entre_cliente(cliente1, cliente2, 999999999)
-#f.trans_entre_cliente(cliente1, cliente2, 999999999)
+entidad1.transferir(cliente5, cliente2, 10000000)
+print(str(cliente5.saldo),str(cliente2.saldo))
+
+entidad2.transferir(cliente6, cliente1, 100000000)
+print(str(cliente6.saldo), str(cliente1.saldo))
 
 #pto 5 realizar 4 transferencias entre clientes 
 
+f.transf_aleat(2, entidad1)
+
+f.transf_aleat(2, entidad2)
+
 #realizar 2 transferecias entre cliente y financiera (guido)
+
 
 #pto 6 y pto 7 son similares preguntar al respecto
 
+
+
 #pto 8 y 9 preguntar por la cosa del 10%
 
+
+
 #pto 10 imprimir estado cuenta 
+
 
 # pto 11 imprime tabla cliente  
 '''

@@ -1,20 +1,17 @@
-def trans_entre_cliente(envia,recibe,monto):#cris
-    #hacer fx que transfiera entre cliente y que valide que el cliente que envia tiene saldo
-#    if envia.saldo-monto < -1000000:
-    if not envia.girar(monto):
-#        print(envia.nombre + "No tiene saldo suficiente!!!")
-        return
-    else:
-        envia.girar(monto)  
-        recibe.abonar(monto)
-    print("Luego de la Transaccion: ")
-    print(envia.nombre + " : Saldo :" + str(envia.saldo))
-    print(recibe.nombre  + " : Saldo :" + str(recibe.saldo))    
-    return envia, recibe, monto
+import random
 
-def trans_cliente_ent(envia,recibe,monto):#guido
-    #fx donde cliente transfiera a entidad sin sobrepasar su saldo (-1000000)
-    return envia,recibe,monto
+def transf_aleat(n, entidad):
+    for _i in range (0, n):
+        control = False
+        while not control:
+            desde = random.choice(entidad.clientes)
+            hacia = random.choice(entidad.clientes)
+            if not desde == hacia:
+                control = True
+        monto = random.randint(0, 500000)
+        entidad.transferir(desde, hacia, monto)
+    return n, entidad
+
 
 
 # AREA DE PRUEBAS UNITARIAS
