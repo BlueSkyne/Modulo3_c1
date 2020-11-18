@@ -1,11 +1,11 @@
 import random
 
-def transf_aleat(n, entidad):
+def transf_aleat(n, entidad, clientes):
     for _i in range (0, n):
         control = False
         while not control:
             desde = random.choice(entidad.clientes)
-            hacia = random.choice(entidad.clientes)
+            hacia = random.choice(clientes)
             if not desde == hacia:
                 control = True
         monto = random.randint(0, 500000)
